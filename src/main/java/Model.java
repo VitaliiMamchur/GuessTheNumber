@@ -19,14 +19,17 @@ public class Model {
     }
 
     public boolean setRange(int minBorder, int maxBorder) {
-        if (minBorder > maxBorder) {
-            return false;
-        }
-        else if ((maxBorder - minBorder) >= 2){
-            setMinBorder(minBorder);
-            setMaxBorder(maxBorder);
+
+        if ((maxBorder - minBorder) >= 2) {
+            setMinAndMaxBorders(minBorder, maxBorder);
             return true;
         }
+
         return false;
+    }
+
+    private void setMinAndMaxBorders(int minBorder, int maxBorder) {
+        setMinBorder(minBorder);
+        setMaxBorder(maxBorder);
     }
 }
