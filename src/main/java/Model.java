@@ -7,7 +7,7 @@ public class Model {
     private int randomValue;
     private int guessedValue;
     private static int triesCounter = 0;
-    private ArrayList<Integer> tries = new ArrayList<>();
+    public ArrayList<Integer> tries = new ArrayList<>();
 
 
     public int getMinBorder() {
@@ -31,11 +31,11 @@ public class Model {
     }
 
     public void setRandomValue() {
-        this.randomValue = random(getMinBorder(), getMaxBorder());
+        this.randomValue = random(this.getMinBorder(), this.getMaxBorder());
     }
 
-    private int random(int minBarrier, int maxBarrier) {
-        int randomValue = (int) Math.ceil(Math.random() * (maxBarrier - minBarrier - 1) + minBarrier);
+    private int random(int minBorder, int maxBorder) {
+        int randomValue = (int) Math.ceil(Math.random() * (maxBorder - minBorder - 1) + minBorder);
         return randomValue;
     }
 
@@ -55,7 +55,10 @@ public class Model {
         triesCounter++;
     }
 
+
+    /*
     public boolean setRange(int minBorder, int maxBorder) {
+
 
         if ((maxBorder - minBorder) >= 2) {
             setMinAndMaxBorders(minBorder, maxBorder);
@@ -69,6 +72,9 @@ public class Model {
         setMinBorder(minBorder);
         setMaxBorder(maxBorder);
     }
+
+     */
+
 
 
 
